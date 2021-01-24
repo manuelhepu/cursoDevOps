@@ -1,0 +1,36 @@
+version: "3.0"
+services:
+  #Database Service
+  rdbm:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: manuel
+    volumes:
+      - db:/var/lib/mysql
+ #phpmyadmin service
+  phpmyadmin:
+      image: phpmyadmin:5.0.4
+      ports:
+      - "8181:80"
+      environment:
+        MYSQL_ROOT_PASSWORD: manuel
+        PMA_ARBITRARY: 1
+      depends_on:
+       - rdbm
+#wordpress service
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: rdbm
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: manuel
+      WORDPRESS_DB_NAME: exampledb
+    volumes:
+      - wordpress:/var/www/html
+
+volumes:
+ db:
+ wordpress:
