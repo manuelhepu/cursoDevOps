@@ -11,9 +11,9 @@ Proyecto montado en docker-compose donde tenemos el servicio de wordpress, maria
 
 # Tercer  Proyecto -- DockerSpringMaven
 
-Proyecto montado en docker-compose donde tenemos el servicio de wordpress, mariadb y phpmyadmin.
+Proyecto montado en docker donde tenemos el framework de spring con maven. -- JAVA 11
 
 # Cuarto Proyecto -- DockerSpringGradle
 
-Proyecto montado en docker-compose donde tenemos el servicio de wordpress, mariadb y phpmyadmin.
+Proyecto montado en docker donde tenemos el framework de spring con gradle --JAVA 15
 
